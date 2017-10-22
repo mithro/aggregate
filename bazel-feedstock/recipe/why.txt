@@ -1,0 +1,16 @@
+
+(bazel) F:\nwani\aggregate\bazel-feedstock\recipe>ntldd bazel-0.7.0-windows-x86_64.exe
+        ADVAPI32.dll => C:\Windows\system32\ADVAPI32.dll (0x000000000ac10000)
+        ole32.dll => C:\Windows\system32\ole32.dll (0x000000000b3f0000)
+        SHELL32.dll => C:\Windows\system32\SHELL32.dll (0x000000000b5f0000)
+        WS2_32.dll => C:\Windows\system32\WS2_32.dll (0x00000000003a0000)
+        KERNEL32.dll => C:\Windows\system32\KERNEL32.dll (0x000000000acf0000)
+
+(bazel) F:\nwani\aggregate\bazel-feedstock\recipe>ntldd Library\bin\bazel.exe
+        ADVAPI32.dll => C:\Windows\system32\ADVAPI32.dll (0x00000000061e0000)
+        ole32.dll => C:\Windows\system32\ole32.dll (0x00000000069c0000)
+        SHELL32.dll => C:\Windows\system32\SHELL32.dll (0x0000000006bc0000)
+        WS2_32.dll => C:\Windows\system32\WS2_32.dll (0x00000000002d0000)
+        MSVCP140.dll => C:\Windows\system32\MSVCP140.dll (0x00000000002d0000)
+        KERNEL32.dll => C:\Windows\system32\KERNEL32.dll (0x00000000062c0000)
+        VCRUNTIME140.dll => C:\Windows\system32\VCRUNTIME140.dll (0x0000000000370000)

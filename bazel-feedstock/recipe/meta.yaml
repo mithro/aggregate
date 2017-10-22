@@ -1,0 +1,53 @@
+{% set version = "0.7.0" %}
+
+package:
+  name: bazel
+  version: {{ version }}
+
+source:
+  fn: bazel-{{ version }}.zip
+  url: https://github.com/bazelbuild/bazel/releases/download/0.7.0/bazel-0.7.0-dist.zip
+  sha256: a084a9c5d843e2343bf3f319154a48abe3d35d52feb0ad45dec427a1c4ffc416
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - posix  # [win]
+    - openjdk ==8.0.121
+    - python
+  run:
+    - openjdk >=8.0.121
+
+test:
+  source_files:
+    - examples
+    - WORKSPACE
+  commands:
+    - bazel version
+    # Build CPP Program
+    - bazel.exe build examples/cpp:hello-world  # [win]
+    - bazel-bin\examples\cpp\hello-world.exe  # [win]
+    # Build Java Program
+    - bazel.exe build examples/java-native/src/main/java/com/example/myproject:hello-world
+    - bazel-bin\examples\java-native\src\main\java\com\example\myproject\hello-world.exe  # [win]
+    # Build Python Program
+    - bazel.exe build examples/py_native:bin 
+    - bazel-bin\examples\py_native\bin.exe  # [win]
+    # Shutdown bazel server
+    - bazel shutdown
+
+about:
+  home: https://www.bazel.build/
+  license: Apache 2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: build system originally authored by Google
+  description: |
+    Bazel is Google's own build tool, now publicly available in Beta. Bazel has
+    built-in support for building both client and server software, including
+    client applications for both Android and iOS platforms. It also provides an
+    extensible framework that you can use to develop your own build rules.
+  dev_url: https://github.com/bazelbuild/bazel
+  doc_url: https://www.bazel.io/versions/master/docs/install.html
