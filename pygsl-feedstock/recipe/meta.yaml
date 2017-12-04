@@ -1,0 +1,33 @@
+{% set version = "2.3.0" %}
+
+package:
+  name: pygsl
+  version: {{ version }}
+
+source:
+  fn: pygsl-2.3.0.tar.gz
+  url: https://sourceforge.net/projects/pygsl/files/latest/download
+  md5: a0348842a2b9bc999cc99752f0487ee9
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - python
+    - setuptools
+    - gsl
+  run:
+    - python
+    - gsl
+
+test:
+  imports:
+    - pygsl
+    - pygsl.gsl_dist
+
+about:
+  home: http://pygsl.sourceforge.net
+  license: GPL version 2
+  license_family: GPL2
+  license_file: COPYING
+  summary: 'python interface for the GNU scientific library (gsl)'
