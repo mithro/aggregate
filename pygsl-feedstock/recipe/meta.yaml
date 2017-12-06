@@ -8,10 +8,8 @@ source:
   fn: pygsl-2.3.0.tar.gz
   url: https://sourceforge.net/projects/pygsl/files/latest/download
   md5: a0348842a2b9bc999cc99752f0487ee9
-
-build:
   patches:
-    - win-macro.patch
+    - win-macro.patch                      # [win]
 
 requirements:
   build:
