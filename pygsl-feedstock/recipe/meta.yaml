@@ -15,6 +15,7 @@ requirements:
   host:
     - python
     - setuptools
+    - numpy
     - gsl
   run:
     - python
