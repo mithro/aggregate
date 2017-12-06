@@ -12,7 +12,7 @@ index 98e6ebe..26365ae 100644
  fprintf(stderr,                                                      \
  	"In Function %s from File %s at line %d "  mess      "\n" ,  \
 -        __FUNCTION__, __FILE__, __LINE__, args)               \
-+        __FUNCTION__, __FILE__, __LINE__, args, ...)                     \
++        __FUNCTION__, __FILE__, __LINE__, args, __VA_ARGS__)                     \
  : \
        0 
  #else /* DEBUG > 0 */
