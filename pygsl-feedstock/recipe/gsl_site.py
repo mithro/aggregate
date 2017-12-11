@@ -9,10 +9,10 @@ prefix = os.path.join(sys.prefix, "Library")
 
 cflags = "-g -I" + os.path.join(prefix, "include")
 
-libs   = "-L" + os.path.join(prefix, "lib") + " -lgsl -lgslcblas -lm"
+libs   = "-L" + os.path.join(prefix, "lib") + " -lgsl -lgslcblas"
 
 # Enter the correct GSL versions by hand..
-version = "2.3"
+version = "2.2"
 
 
 # swig_extension.py needs swig to generate the approbriate wrapper files. This
