@@ -1,0 +1,28 @@
+package:
+  name: pygsl
+  version: 4.6.0
+
+source:
+  fn: proteus-4.6.0.tar.gz
+  url: https://pypi.python.org/packages/af/0d/b2f73cf17afb8ce10dc5c0467cb342b26e03d8be26da4e8308055d172fab/proteus-4.6.0.tar.gz
+  md5: a16e919420910ac780b56243372211fa
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - python-dateutil
+  run:
+    - python
+    - python-dateutil
+
+test:
+  imports:
+    - proteus
+
+about:
+  home: http://www.tryton.org/
+  license: LGPL-3
+  license_family: LGPL
+  license_file: COPYRIGHT
+  summary: 'library to access Tryton server as a client'
