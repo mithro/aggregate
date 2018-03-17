@@ -178,6 +178,10 @@ fi
 # Install the crosstool-ng config program to help with reproducibility:
 cp ${SRC_DIR}/gcc_built/bin/${CHOST}-ct-ng.config ${PREFIX}/bin
 
+# Test:
+${PREFIX}/bin/${CHOST}-gcc "${RECIPE_DIR}"/vsyscall.c -static
+./a.out && rm a.out
+
 # Strip executables, we may want to install to a different prefix
 # and strip in there so that we do not change files that are not
 # part of this package.
